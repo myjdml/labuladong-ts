@@ -2,20 +2,20 @@
  * @Author: myjdml
  * @Date: 2021-09-28 11:38:48
  * @LastEditors: myjdml
- * @LastEditTime: 2021-09-30 01:50:58
+ * @LastEditTime: 2021-09-30 14:51:37
  * @Description: 
  */
 
 // 优先队列的实现
 export class MaxPriorityQueue {
   // 存储元素的数组
-  private pq : number[]
+  private pq : (number | null)[]
   // 当前Priority Queue 中元素的个数
   private N: number = 0
 
   constructor(cap: number) {
     // 因为索引0不适用，所以创建的时候会多创建一个空间
-    this.pq = new Array(cap + 1)
+    this.pq = new Array(cap + 1).fill(null)
   }
 
   /**
@@ -23,7 +23,7 @@ export class MaxPriorityQueue {
    * @param {*} number
    * @return {*}
    */
-  public max = (): number => {
+  public max = (): number | null => {
     return this.pq[1]
   }
 
@@ -44,9 +44,10 @@ export class MaxPriorityQueue {
    * @param {*} number
    * @return {*}
    */
-  public delMax = (): number => {
+  public delMax = (): number | null => {
     let max = this.pq[1]
     this.exch(1, this.N)
+    this.pq[this.N] = null
     this.N--
     // 将调上来的元素下沉到正确的位置
     this.sink(1)
@@ -96,7 +97,7 @@ export class MaxPriorityQueue {
    * @return {*}
    */
   private exch = (i: number, j: number): any => {
-    const temp: number = this.pq[i]
+    const temp: number | null = this.pq[i]
     this.pq[i] = this.pq[j]
     this.pq[j] = temp
   }
@@ -108,7 +109,7 @@ export class MaxPriorityQueue {
    * @return {*}
    */
   private less = (i: number, j: number): boolean => {
-    return this.pq[i] < this.pq[j]
+    return this.pq[i]! < this.pq[j]!
   }
 
   /**
@@ -121,7 +122,7 @@ export class MaxPriorityQueue {
   }
 
   private parent = (root: number): number => {
-    return root / 2
+    return Math.floor(root / 2)
   }
 
   private left = (root: number): number => {
