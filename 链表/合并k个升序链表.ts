@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-09-28 10:27:46
  * @LastEditors: myjdml
- * @LastEditTime: 2021-10-01 18:52:25
+ * @LastEditTime: 2021-10-01 19:55:42
  * @Description: 
  */
 import { MaxPriorityQueue, MinPriorityQueue } from "../utils/PriorityQueue";
@@ -50,15 +50,3 @@ const mergeKLists = (Lists: number[][]): ListNode | null => {
 }
 
 mergeKLists([[1,2,3], [3,4,5], [23,66,22,1]])
-
-// const querry = new MaxPriorityQueue(8)
-// querry.print()
-// querry.insert(3)
-// querry.insert(8)
-// querry.insert(4)
-// querry.insert(6)
-// querry.insert(5)
-
-// querry.print()
-// querry.delMax()
-// querry.print()
