@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-09-28 00:27:04
  * @LastEditors: myjdml
- * @LastEditTime: 2021-09-28 11:36:13
+ * @LastEditTime: 2021-10-04 16:08:50
  * @Description: 
  */
 
@@ -29,7 +29,7 @@ export const logListNode = (l: ListNode) => {
   let currentListNode: ListNode | null = l;
   while (true) {
     if (currentListNode.next === null) {
-      (currentListNode.val, "=> null");
+      console.log(currentListNode.val, "=> null");
       break;
     }
     console.log(currentListNode.val, "=>");

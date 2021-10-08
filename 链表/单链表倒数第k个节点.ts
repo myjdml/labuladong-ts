@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-10-01 18:55:30
  * @LastEditors: myjdml
- * @LastEditTime: 2021-10-01 20:27:14
+ * @LastEditTime: 2021-10-06 21:19:58
  * @Description: 寻找单链表倒数第k个节点
  */
 
@@ -23,4 +23,4 @@ const findFromEnd = (head: ListNode, k: number): ListNode | null => {
 
 const head: ListNode = arrayToListNode([1,2,3,4,5,6,7,8,9,10])
 
-console.log(findFromEnd(head, 2))
+console.log(findFromEnd(head, 10))
